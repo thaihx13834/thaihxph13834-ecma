@@ -1,6 +1,6 @@
 const Footer = {
   render() {
-    return /* html */ "thai";
+    return `thai`;
   },
 };
 export default Footer;
