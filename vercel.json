@@ -5,7 +5,23 @@
       "dest": "/"
     },
     {
+      "src": "/signin",
+      "dest": "/"
+    },
+    {
+      "src": "/signup",
+      "dest": "/"
+    },
+    {
       "src": "/admin/news",
+      "dest": "/"
+    },
+    {
+      "src": "/admin/news/add",
+      "dest": "/"
+    },
+    {
+      "src": "/admin/news/:id/edỉt",
       "dest": "/"
     }
   ]
