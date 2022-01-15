@@ -5,6 +5,14 @@
       "dest": "/"
     },
     {
+      "src": "/news",
+      "dest": "/"
+    },
+    {
+      "src": "/news/:id",
+      "dest": "/"
+    },
+    {
       "src": "/signin",
       "dest": "/"
     },
