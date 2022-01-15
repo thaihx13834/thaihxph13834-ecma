@@ -10,8 +10,8 @@ const Header = {
               <li><a href="/">Trang chủ</a></li>
               <li><a href="/news">News</a></li>
               <li><a href="/signin">Chuong trình đào tạo</a></li>
-              <li><a href="">Góc sinh viên</a></li>
-              <li><a href="">Tuyển dụng</a></li>
+              <li><a href="/signup">Góc sinh viên</a></li>
+              <li><a href="/admin/dashboard">Tuyển dụng</a></li>
             </ul>
           </div>
 
