@@ -54,7 +54,7 @@ const Signup = {
                 </button>
   
                 <div class="mt-4 text-center">
-                  <p class="text-sm">Bạn đã có tài khoản? <a href="/signup"
+                  <p class="text-sm">Bạn đã có tài khoản? <a href="/signin"
                       class="text-blue-600 hover:underline"> Đăng nhập.</a></p>
                 </div>
               </div>
