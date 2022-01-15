@@ -1,8 +1,11 @@
-import Banner from "../components/banner";
+import Banner from "../../components/banner";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
 const Homepage = {
   render() {
     return `
+        </header>${Header.render()}</header>
         <div class="banner">${Banner.render()}</div>
         <div>
         <h3 class="title">Tin tức học tập</h3>
@@ -108,6 +111,7 @@ const Homepage = {
           </div>
         </div>
       </div>
+      <div id="footer">${Footer.render()}</div>
         `;
   },
 };

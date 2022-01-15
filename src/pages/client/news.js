@@ -1,9 +1,12 @@
-import data from "../data";
+import data from "../../data";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
 const News = {
   render() {
     return `
-      <h2 class="font-semibold text-2xl uppercase my-4">Tin tức học tập</h2>            
+        </header>${Header.render()}</header>
+        <h2 class="font-semibold text-2xl uppercase my-4">Tin tức học tập</h2>            
         <div class="grid grid-cols-3 gap-8">
             ${data
               .map(
@@ -19,6 +22,7 @@ const News = {
               )
               .join("")}
         </div>
+        <div id="footer">${Footer.render()}</div>
       `;
   },
 };
