@@ -1,13 +1,16 @@
 import Navigo from "navigo";
 import Homepage from "./pages/client/homepage";
-import News from "./pages/client/news";
-import Detail from "./pages/client/detailnews";
 import Signin from "./pages/client/signin";
 import Signup from "./pages/client/signup";
 import Dashboard from "./pages/admin/dashboard";
-import Newsadmin from "./pages/admin/news";
-import Addnews from "./pages/admin/news/addNews";
-import Editnews from "./pages/admin/news/editNews";
+import Cart from "./pages/client/cart";
+import Checkout from "./pages/client/checkout";
+import Bill from "./pages/client/bill";
+import About from "./pages/client/about";
+import Contact from "./pages/client/contact";
+import Product from "./pages/client/product";
+import Productdetail from "./pages/client/detail";
+import Loaihang from "./pages/admin/loaihang";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
@@ -18,13 +21,6 @@ const print = (content) => {
 router.on({
   "/": () => {
     print(Homepage.render());
-  },
-  "/news": () => {
-    print(News.render());
-  },
-  "/news/:id": ({ data }) => {
-    const { id } = data;
-    print(Detail.render(id));
   },
   "/signin": () => {
     print(Signin.render());
@@ -49,6 +45,38 @@ router.on({
   "/admin/news/:id/edit": ({ data }) => {
     const { id } = data;
     print(Editnews.render(id));
+  },
+
+  "/cart": () => {
+    print(Cart.render());
+  },
+
+  "/checkout": () => {
+    print(Checkout.render());
+  },
+
+  "/bill": () => {
+    print(Bill.render());
+  },
+
+  "/about": () => {
+    print(About.render());
+  },
+
+  "/contact": () => {
+    print(Contact.render());
+  },
+
+  "/product": () => {
+    print(Product.render());
+  },
+
+  "/detail": () => {
+    print(Productdetail.render());
+  },
+
+  "/admin/loaihang": () => {
+    print(Loaihang.render());
   },
 });
 router.resolve();

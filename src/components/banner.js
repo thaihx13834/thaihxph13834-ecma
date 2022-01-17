@@ -1,6 +1,6 @@
 const Banner = {
   render() {
-    return `<img src="https://picsum.photos/1280/250" alt="" />`;
+    return /* html */ `<img src="https://picsum.photos/1600/500" alt="" />`;
   },
 };
 
