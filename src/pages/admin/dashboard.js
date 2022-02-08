@@ -3,7 +3,7 @@ import Banner from "../../components/banner";
 
 const AdminPosts = {
   async render() {
-    const respon = await axios.get(
+    const response = await axios.get(
       "https://5e79b4b817314d00161333da.mockapi.io/posts"
     );
     return `
@@ -20,7 +20,7 @@ const AdminPosts = {
                             <th></th>
                         </thead>
                         <tbody>
-                            ${respon.data
+                            ${response.data
                               .map(
                                 (post, index) => `
                                 <tr>
@@ -36,7 +36,9 @@ const AdminPosts = {
                                         }</a></h3>
                                     </td>
                                     <td>
-                                        <button>Delete</button>
+                                        <button data-id="${
+                                          post.id
+                                        }" class="btn bg-red-500 text-white inline-block py-3 px-5 rounded">Delete</button>
                                     </td>
                                 </tr>
                             `
@@ -48,6 +50,23 @@ const AdminPosts = {
                 </div>
             </div>
         `;
+  },
+  afterRender() {
+    // Lấy danh sách button
+    const btns = document.querySelectorAll(".btn");
+    // tạo vòng lặp và lấy ra từng button
+    btns.forEach((btn) => {
+      const { id } = btn.dataset;
+      // Viết sự kiện khi click vào button call api và xóa sản phẩm
+      btn.addEventListener("click", () => {
+        const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
+        if (confirm) {
+          axios.delete(
+            `https://5e79b4b817314d00161333da.mockapi.io/posts/${id}`
+          );
+        }
+      });
+    });
   },
 };
 export default AdminPosts;

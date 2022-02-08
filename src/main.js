@@ -4,13 +4,13 @@ import News from "./pages/client/news";
 import Detail from "./pages/client/detailnews";
 import Signin from "./pages/client/signin";
 import Signup from "./pages/client/signup";
-
 import Dashboard from "./pages/admin/dashboard";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
 const print = async (content) => {
   document.querySelector(" .container").innerHTML = await content.render();
+  if (content.after_render) await content.after_render();
 };
 
 router.on({
