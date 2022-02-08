@@ -1,29 +1,53 @@
-import Navadmin from "../../components/navAdmin";
+import axios from "axios";
+import Banner from "../../components/banner";
 
-const Dashboard = {
-  render() {
-    return /* html */ `
-        <div class="min-h-full">
-        ${Navadmin.render()}
-        <header class="bg-white shadow">
-          <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold text-gray-900">
-              Dashboard
-            </h1>
-          </div>
-        </header>
-        <main>
-          <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            <!-- Replace with your content -->
-            <div class="px-4 py-6 sm:px-0">
-              <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+const AdminPosts = {
+  async render() {
+    const respon = await axios.get(
+      "https://5e79b4b817314d00161333da.mockapi.io/posts"
+    );
+    return `
+            <div class="max-w-5xl mx-auto">
+                <div class="banner">
+                ${Banner.render()}
+                </div>
+                <div class="news">
+                    <table>
+                        <thead>
+                            <th>STT</th>
+                            <th>Ảnh</th>
+                            <th>Tiêu đề</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            ${respon.data
+                              .map(
+                                (post, index) => `
+                                <tr>
+                                    <td>${index + 1}</td>
+                                    <td>
+                                        <img src="${
+                                          post.img
+                                        }" alt="" width="50"/>
+                                    </td>
+                                    <td>
+                                        <h3 class="my-3"><a href="" class="font-semibold text-lg text-orange-500 ">${
+                                          post.title
+                                        }</a></h3>
+                                    </td>
+                                    <td>
+                                        <button>Delete</button>
+                                    </td>
+                                </tr>
+                            `
+                              )
+                              .join("")}
+                        </tbody>
+                    </table>
+                    
+                </div>
             </div>
-            <!-- /End replace -->
-          </div>
-        </main>
-      </div>
         `;
   },
 };
-
-export default Dashboard;
+export default AdminPosts;

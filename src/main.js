@@ -4,23 +4,21 @@ import News from "./pages/client/news";
 import Detail from "./pages/client/detailnews";
 import Signin from "./pages/client/signin";
 import Signup from "./pages/client/signup";
+
 import Dashboard from "./pages/admin/dashboard";
-import Newsadmin from "./pages/admin/news";
-import Addnews from "./pages/admin/news/addNews";
-import Editnews from "./pages/admin/news/editNews";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
-const print = (content) => {
-  document.querySelector(" .container").innerHTML = content;
+const print = async (content) => {
+  document.querySelector(" .container").innerHTML = await content.render();
 };
 
 router.on({
   "/": () => {
-    print(Homepage.render());
+    print(Homepage);
   },
   "/news": () => {
-    print(News.render());
+    print(News);
   },
   "/news/:id": ({ data }) => {
     const { id } = data;
@@ -35,11 +33,11 @@ router.on({
   },
 
   "/admin/dashboard": () => {
-    print(Dashboard.render());
+    print(Dashboard);
   },
 
   "/admin/news": () => {
-    print(Newsadmin.render());
+    print(Newsadmin);
   },
 
   "/admin/news/add": () => {

@@ -1,14 +1,19 @@
-import data from "../../data";
+import axios from "axios";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 
 const News = {
-  render() {
+  async render() {
+    const rps = await axios.get(
+      "https://5e79b4b817314d00161333da.mockapi.io/posts"
+    );
+
+    console.log(rps);
     return `
         </header>${Header.render()}</header>
         <h2 class="font-semibold text-2xl uppercase my-4">Tin tức học tập</h2>            
         <div class="grid grid-cols-3 gap-8">
-            ${data
+            ${rps.data
               .map(
                 (post) => `
                     <div class="border p-3">
