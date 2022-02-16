@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "ah thai  ss",
+      "img": "http://res.cloudinary.com/thaicodejj/image/upload/v1644655606/olvee2uzlfbimkucdnbe.jpg",
+      "desc": "sdasda ss"
+    }
+  ],
+  "users": [
+    {
+      "email": "thai@gmail.com",
+      "password": "$2a$10$yudo2seLtukYE/laD94L5uyfBol3baCCIMt30j2Q3AWN5aiClUJvu",
+      "id": 1
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$uF295XmTtDc8FkMyywk5keMMvFyML1mNNwGLZPf/50ggVBdRUaA.u",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "ah thai  ss",
+      "img": "http://res.cloudinary.com/thaicodejj/image/upload/v1644655606/olvee2uzlfbimkucdnbe.jpg",
+      "desc": "sdasda ss",
+      "price": 100
+    },
+    {
+      "id": 2,
+      "name": "ah thai  ss",
+      "img": "http://res.cloudinary.com/thaicodejj/image/upload/v1644655606/olvee2uzlfbimkucdnbe.jpg",
+      "desc": "sdasda ss",
+      "price": 100
+    },
+    {
+      "id": 3,
+      "name": "ah thai  ss",
+      "img": "http://res.cloudinary.com/thaicodejj/image/upload/v1644655606/olvee2uzlfbimkucdnbe.jpg",
+      "desc": "sdasda ss",
+      "price": 100
+    },
+    {
+      "id": 4,
+      "name": "ah thai  ss",
+      "img": "http://res.cloudinary.com/thaicodejj/image/upload/v1644655606/olvee2uzlfbimkucdnbe.jpg",
+      "desc": "sdasda ss",
+      "price": 100
+    }
+  ]
+}

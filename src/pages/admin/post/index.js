@@ -1,11 +1,10 @@
-import axios from "axios";
-import Banner from "../../components/banner";
+import { getAll, remove } from "../../../api/posts";
+import Banner from "../../../components/banner";
 
 const AdminPosts = {
   async render() {
-    const response = await axios.get(
-      "https://5e79b4b817314d00161333da.mockapi.io/posts"
-    );
+    const response = await getAll();
+    console.log(response);
     return `
             <div class="max-w-5xl mx-auto">
                 <div class="banner">
@@ -36,6 +35,9 @@ const AdminPosts = {
                                         }</a></h3>
                                     </td>
                                     <td>
+                                    <a href="/admin/post/${
+                                      post.id
+                                    }/edit">Edit</a>
                                         <button data-id="${
                                           post.id
                                         }" class="btn bg-red-500 text-white inline-block py-3 px-5 rounded">Delete</button>
@@ -52,18 +54,16 @@ const AdminPosts = {
         `;
   },
   afterRender() {
-    // Lấy danh sách button
     const btns = document.querySelectorAll(".btn");
-    // tạo vòng lặp và lấy ra từng button
+
     btns.forEach((btn) => {
       const { id } = btn.dataset;
-      // Viết sự kiện khi click vào button call api và xóa sản phẩm
-      btn.addEventListener("click", () => {
-        const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
+      console.log(id);
+      btn.addEventListener("click", function () {
+        const confirm = window.confirm("Ban cos muon xoa ko");
         if (confirm) {
-          axios.delete(
-            `https://5e79b4b817314d00161333da.mockapi.io/posts/${id}`
-          );
+          console.log(id);
+          remove(id);
         }
       });
     });

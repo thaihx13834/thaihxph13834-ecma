@@ -4,7 +4,7 @@ import Footer from "../../components/footer";
 
 const Homepage = {
   render() {
-    return `
+    return /*html*/ `
         </header>${Header.render()}</header>
         <div class="banner">${Banner.render()}</div>
         <div>
@@ -113,6 +113,10 @@ const Homepage = {
       </div>
       <div id="footer">${Footer.render()}</div>
         `;
+  },
+
+  afterRender() {
+    Header.afterRender();
   },
 };
 export default Homepage;

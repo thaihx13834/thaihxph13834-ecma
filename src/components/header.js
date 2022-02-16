@@ -1,6 +1,9 @@
+import { reRender } from "../utils";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 const Header = {
   render() {
-    return `
+    return /*html*/ `
          <div class="header-top">
           <a href=""><img src="https://picsum.photos/120/50" alt="" /></a>
         </div>
@@ -15,14 +18,35 @@ const Header = {
             </ul>
           </div>
 
-          <div class="form-search">
-            <form action="">
-              <input type="text" name="" id="" class="form-control" />
-              <input type="submit" value="Tìm kiếm" class="form-submit" />
-            </form>
-          </div>
+          ${
+            localStorage.getItem("user")
+              ? `<div class="form-search">
+          <ul class="flex">
+          <li class="flex items-center">Xin chao <a href="/" class="block px-4 py-3 hover:bg-blue-800 hover:text-white" id="email"></a></li>
+          <li class="flex items-center"><a class="block px-4 py-3 hover:bg-blue-800 hover:text-white" id="logout">Logout</a></li>
+      </ul>
+          </div>`
+              : ""
+          }
         </div>
       `;
+  },
+
+  afterRender() {
+    const email = document.querySelector("#email");
+    const logout = document.querySelector("#logout");
+    if (email) {
+      console.log(JSON.parse(localStorage.getItem("user")).email);
+      email.innerHTML = JSON.parse(localStorage.getItem("user")).email;
+    }
+
+    if (logout) {
+      logout.addEventListener("click", function () {
+        localStorage.removeItem("user");
+        reRender(Header, "#header");
+        toastr.success("Log out thanh cong");
+      });
+    }
   },
 };
 export default Header;
