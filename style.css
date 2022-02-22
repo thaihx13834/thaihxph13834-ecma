@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-  @apply max-w-screen-xl mx-auto;
+  @apply mx-auto;
 }
 
 .header-top {
@@ -43,10 +43,6 @@
   color: white;
 }
 
-.banner {
-  @apply mt-3;
-}
-
 .title {
   @apply text-3xl text-blue-900 uppercase my-6 font-bold;
 }
@@ -67,6 +63,58 @@
   @apply text-sm;
 }
 
-#footer {
-  @apply bg-blue-900 text-center text-white p-4 mt-4;
+.hv:hover .hvc {
+  @apply text-white;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  left: 0;
+  bottom: -200%;
+}
+.dropdown-content-filter {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  left: 200px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  cursor: pointer;
+}
+
+.act {
+  display: block;
+}
+
+.error {
+  margin-top: 3px;
+  color: red;
 }
